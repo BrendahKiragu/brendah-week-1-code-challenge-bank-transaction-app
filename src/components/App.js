@@ -10,6 +10,8 @@ function App() {
   //creates 2 state variables: transactions and searchTerm
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoggedin, setIsLoggedin] = useState(false)
+  const [accountDetails, setAccountDetails] = useState(false);
   
   useEffect(() => {
     // Fetching  data from the local json-server
@@ -29,12 +31,32 @@ function App() {
     setSearchTerm(searchTerm);
   };
 
+  const handleLog = ()=>{
+    setIsLoggedin((isLoggedin)=>!isLoggedin)
+  }
+
+  useEffect (()=>{
+   if(isLoggedin){
+      setAccountDetails({
+        accountHolder : "John Doe",
+        accountNumber : "1234",
+      })
+    }else {
+      setAccountDetails(null)
+    }
+  }, [isLoggedin])
+
     return (
     <div className='App'>
-      <Header />
-      <SearchBar onSearch={handleSearchChange} /> 
+      <Header 
+      onHandleLog={handleLog} 
+      isLoggedin = {isLoggedin}
+      accountDetails = {accountDetails}
+      />
+      {isLoggedin ? <div> <SearchBar onSearch={handleSearchChange} /> 
       <TransactionForm onAddTransaction={handleAddTransaction} />
-      <TransactionTable transactions={transactions} searchTerm={searchTerm} />
+      <TransactionTable transactions={transactions} searchTerm={searchTerm} /> </div>
+      : "Please LOGIN!"}
     </div>
   );
 }
