@@ -28,25 +28,48 @@ input{
 
 form {
   display: flex;
-  form {
-  display: flex;
-  justify-content:space-around;
-  margin-bottom: 20px;
-  margin-bottom: 20px;
-}
-  margin-bottom: 20px;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  margin:0 auto;
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  max-width: 350px;
+  gap: 0.5rem;
 }
 
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+ 
 .button{
   color: #fff;
-  background-color: rgb(29, 126, 29);
+  font-size: 1rem;
+  background-color: #007bff;
   border: none;
-  border-radius: 19px;
-  padding: 10px;
+  border-radius: 4px;
+  padding: 12px 24px;
   cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
+ }
  
-  }
+ .button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
 
 table {
   width: 100%;
