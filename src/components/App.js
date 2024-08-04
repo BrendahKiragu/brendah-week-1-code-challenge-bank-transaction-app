@@ -10,7 +10,7 @@ function App() {
   //creates 2 state variables: transactions and searchTerm
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+  
   useEffect(() => {
     // Fetching  data from the local json-server
     fetch('http://localhost:3000/transactions')
@@ -31,8 +31,8 @@ function App() {
 
     return (
     <div className='App'>
-      <Header/> <hr></hr>
-      <SearchBar onSearch={handleSearchChange} />
+      <Header />
+      <SearchBar onSearch={handleSearchChange} /> 
       <TransactionForm onAddTransaction={handleAddTransaction} />
       <TransactionTable transactions={transactions} searchTerm={searchTerm} />
     </div>
