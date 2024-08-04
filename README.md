@@ -1,7 +1,7 @@
 # TITLE: My Transactions Manager App
 
 # About the App
-This project is a simple React application that helps you manage transactions. The app allows you to add, search, and display transactions using a local JSON server as the backend.
+This project is a simple React application that helps you manage transactions. The app allows you to add, search, display and delete transactions using a local JSON server as the backend.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -18,6 +18,7 @@ With the App you can:
   . Add Transactions: Easily add new transactions using a form.
   . Search Transactions: Filter through the list of transactions with the search bar.    
   .View Transactions: View the list of your transactions displayed as a table.
+  .Delete a tansaction: delete a transaction from the table with the delete button.
   
   ## Installation
 To set up this project locally, follow these steps:
@@ -58,7 +59,7 @@ Once the app is running, you can:
  .**Header**: Displays the header of the application.
  .**SearchBar**: A component for the search input field.
  .**TransactionForm**: A form for adding new transactions.
- .**TransactionTable**: Displays a list of transactions in a table format.
+ .**TransactionTable**: Displays a list of transactions in a table format which can be deleted.
 
  ## Contributing 
 If you'd like to contribute to this project, please fork the repository and use a feature branch. Pull requests are warmly welcome.
