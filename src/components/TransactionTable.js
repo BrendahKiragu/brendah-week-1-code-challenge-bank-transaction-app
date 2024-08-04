@@ -3,12 +3,12 @@ import React from 'react';
 function TransactionTable({ transactions, searchTerm }) {
   // Filter transactions based on the searchTerm
   const filteredTransactions = transactions.filter(transaction =>
-    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+    transaction.description && transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div>
-      <h3>My Transactions</h3>
+      <h3>Transactions History</h3>
       <table>
         <thead>
           <tr>
