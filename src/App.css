@@ -1,20 +1,68 @@
 .App {
+  padding: 5;
+  border: 1px solid black;
   text-align: center;
-  background-color: red;
+  background-color: hsl(200, 20%, 90%);
+  font-size: 16px;
 }
 
-.App-header {
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App Header {
+  font-size: 1.5em;
+  color: #da1c1c;
+} 
+
+hr {
+  margin: 20px 0;
 }
+
+.search-bar{
+  border-bottom: 30px;
+   padding: 30px;
+}
+
+input{
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  form {
+  display: flex;
+  justify-content:space-around;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+  margin-bottom: 20px;
+}
+
+.button{
+  color: #fff;
+  background-color: rgb(29, 126, 29);
+  border: none;
+  border-radius: 19px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+ 
+  }
+
 table {
   width: 100%;
+  border: 2px solid black;
   border-collapse: collapse;
-  margin-bottom: 20px;
+}
+
+table th, td{
+  border: 1px solid #948e8e;
+  text-align: left;
+  padding: 7px;
+}
+
+table th{
+  background-color: beige;
+}
+table tbody tr:hover{
+  background-color: rgb(12, 234, 12);
 }
