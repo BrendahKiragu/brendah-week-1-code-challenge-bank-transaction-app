@@ -46,6 +46,21 @@ function App() {
     }
   }, [isLoggedin])
 
+ const deleteTransaction = (id)=>{
+   //sends a delete request to backend
+    fetch(`http://localhost:3000/transactions/${id}`,
+     {method: "DELETE",})
+     .then((res)=>{
+      if (res.ok){
+        setTransactions(transactions.filter(transaction=>
+          transaction.id !== id
+        ))
+      } else {
+        return `Couldn't delete transaction, please try again later`
+      }
+     })
+   }
+
     return (
     <div className='App'>
       <Header 
@@ -55,7 +70,7 @@ function App() {
       />
       {isLoggedin ? <div> <SearchBar onSearch={handleSearchChange} /> 
       <TransactionForm onAddTransaction={handleAddTransaction} />
-      <TransactionTable transactions={transactions} searchTerm={searchTerm} /> </div>
+      <TransactionTable transactions={transactions} searchTerm={searchTerm} onDeleteTransaction = {deleteTransaction} /> </div>
       : "Please LOGIN!"}
     </div>
   );
