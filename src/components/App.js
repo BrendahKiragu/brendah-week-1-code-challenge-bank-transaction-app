@@ -30,7 +30,9 @@ function App() {
       body: JSON.stringify(newTransaction),
     })
       .then((res)=>res.json())
-      .then((data)=>setTransactions([...transactions, data]))
+      .then((data)=>{setTransactions([...transactions, data])
+      window.alert('Transaction added successfully!')        
+      })
       .catch((error)=>console.error('error fetching transactions:', error))
   };
 
@@ -81,9 +83,9 @@ function App() {
       accountDetails = {accountDetails}
       />
       {isLoggedin ? <div> <SearchBar onSearch={handleSearchChange} /> 
-      <TransactionForm onAddTransaction={handleAddTransaction} />
-      <TransactionTable transactions={transactions} searchTerm={searchTerm} onDeleteTransaction = {deleteTransaction} /> </div>
-      : "Please LOGIN!"}
+        <TransactionForm onAddTransaction={handleAddTransaction} />
+        <TransactionTable transactions={transactions} searchTerm={searchTerm} onDeleteTransaction = {deleteTransaction} /> </div>
+        : "Please LOGIN!"}
     </div>
   );
 }
