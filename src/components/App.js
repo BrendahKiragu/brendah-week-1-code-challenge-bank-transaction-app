@@ -23,7 +23,15 @@ function App() {
 
   //adds a new transaction to our transactions array
   const handleAddTransaction = (newTransaction) => {
-    setTransactions([...transactions, newTransaction]);
+    //Persists a new transaction to backend
+    fetch('http://localhost:3000/transactions', {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(newTransaction),
+    })
+      .then((res)=>res.json())
+      .then((data)=>setTransactions([...transactions, data]))
+      .catch((error)=>console.error('error fetching transactions:', error))
   };
 
   //form the search input field
@@ -47,19 +55,23 @@ function App() {
   }, [isLoggedin])
 
  const deleteTransaction = (id)=>{
+
+  const isConfirmed = window.confirm("Delete this Transaction?")
+  if(isConfirmed){
    //sends a delete request to backend
     fetch(`http://localhost:3000/transactions/${id}`,
      {method: "DELETE",})
      .then((res)=>{
-      if (res.ok){
+       if (res.ok){
         setTransactions(transactions.filter(transaction=>
           transaction.id !== id
         ))
-      } else {
+       } else {
         return `Couldn't delete transaction, please try again later`
       }
-     })
+     }) 
    }
+  }
 
     return (
     <div className='App'>
