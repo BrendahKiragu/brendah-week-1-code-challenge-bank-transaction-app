@@ -1,13 +1,11 @@
 import React from "react";
 
-function Header ({onLoggedMode, isLoggedIn}) {
+function Header () {
 
   return (
     <div>
       <h1>Bank Of FlatIron</h1>
-      <button onClick={onLoggedMode} >
-        {isLoggedIn ? "LOGIN" : "LOGOUT"}
-      </button>
+      <h3>My recent transactions</h3>
     </div>
   )
 }
