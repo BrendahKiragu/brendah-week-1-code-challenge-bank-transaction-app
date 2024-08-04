@@ -6,6 +6,7 @@ function Header ({onHandleLog,isLoggedin, accountDetails}) {
     //conditional rendering of acc details based on log status
     if(isLoggedin && accountDetails){
       return (<div>
+        <p>👤</p>
         <p>AccountHolder : {accountDetails.accountHolder}</p>
         <p>AccountHolder : {accountDetails.accountNumber}</p>
       </div>)
