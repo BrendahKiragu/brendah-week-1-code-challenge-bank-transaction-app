@@ -26,9 +26,11 @@ function TransactionForm({ onAddTransaction }) {
   };
 
   return (
+    <div>
+    <h3>Add a Transaction</h3>
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Date:</label>
+        <label>Date:  </label>
         <input
           type="date"
           value={date}
@@ -37,7 +39,7 @@ function TransactionForm({ onAddTransaction }) {
         />
       </div>
       <div>
-        <label>Description:</label>
+        <label>Description:  </label>
         <input
           type="text"
           value={description}
@@ -46,16 +48,17 @@ function TransactionForm({ onAddTransaction }) {
         />
       </div>
       <div>
-        <label>Amount:</label>
+        <label>Amount:  </label>
         <input
           type="number"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           required
-        />
+        /> 
       </div>
-      <button type="submit">Add Transaction</button>
+      <button className='button' type="submit">Add Transaction</button>
     </form>
+     </div>
   );
 }
 
