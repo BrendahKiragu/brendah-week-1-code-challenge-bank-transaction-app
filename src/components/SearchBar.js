@@ -9,8 +9,8 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
-      <label>Search:</label>
+    <div className='search-bar'>
+      <label>Search:  </label>
       <input 
         type="text" 
         placeholder="Search transactions..." 
