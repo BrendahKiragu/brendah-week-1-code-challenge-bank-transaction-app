@@ -1,11 +1,9 @@
 import React from "react";
 
 function Header () {
-
-  return (
+    return (
     <div>
-      <h1>Bank Of FlatIron</h1>
-      <h3>My recent transactions</h3>
+      <h1>My Transactions Manager App</h1> 
     </div>
   )
 }
