@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TransactionTable({ transactions, searchTerm }) {
+function TransactionTable({ transactions, searchTerm, onDeleteTransaction}) {
   // Filter transactions based on the searchTerm
   const filteredTransactions = transactions.filter(transaction =>
     transaction.description && transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -23,6 +23,11 @@ function TransactionTable({ transactions, searchTerm }) {
               <td>{transaction.date}</td>
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
+              <td>
+                <button 
+                onClick={()=>onDeleteTransaction(transaction.id)}>
+                  Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
