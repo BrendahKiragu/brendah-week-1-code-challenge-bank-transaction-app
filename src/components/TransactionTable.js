@@ -24,7 +24,7 @@ function TransactionTable({ transactions, searchTerm, onDeleteTransaction}) {
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
               <td>
-                <button 
+                <button className='button'
                 onClick={()=>onDeleteTransaction(transaction.id)}>
                   Delete</button>
               </td>
