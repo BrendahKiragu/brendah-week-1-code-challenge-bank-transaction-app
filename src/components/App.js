@@ -15,7 +15,7 @@ function App() {
   
   useEffect(() => {
     // Fetching  data from the local json-server
-    fetch('http://localhost:3000/transactions')
+    fetch('http://localhost:3001/transactions')
       .then((response) => response.json())
       .then((data) => setTransactions(data))
       .catch((error) => console.error('Error fetching transactions:', error));
@@ -24,7 +24,7 @@ function App() {
   //adds a new transaction to our transactions array
   const handleAddTransaction = (newTransaction) => {
     //Persists a new transaction to backend
-    fetch('http://localhost:3000/transactions', {
+    fetch('http://localhost:3001/transactions', {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify(newTransaction),
@@ -36,7 +36,7 @@ function App() {
       .catch((error)=>console.error('error fetching transactions:', error))
   };
 
-  //form the search input field
+  //form's search input field
   const handleSearchChange = (searchTerm) => {
     setSearchTerm(searchTerm);
   };
@@ -61,7 +61,7 @@ function App() {
   const isConfirmed = window.confirm("Delete this Transaction?")
   if(isConfirmed){
    //sends a delete request to backend
-    fetch(`http://localhost:3000/transactions/${id}`,
+    fetch(`http://localhost:3001/transactions/${id}`,
      {method: "DELETE",})
      .then((res)=>{
        if (res.ok){
