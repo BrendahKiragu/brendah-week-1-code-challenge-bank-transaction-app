@@ -8,7 +8,7 @@ function Header ({onHandleLog,isLoggedin, accountDetails}) {
       return (<div>
         <p>👤</p>
         <p>AccountHolder : {accountDetails.accountHolder}</p>
-        <p>AccountHolder : {accountDetails.accountNumber}</p>
+        <p>AccountNumber : {accountDetails.accountNumber}</p>
       </div>)
     }else {
       return null
