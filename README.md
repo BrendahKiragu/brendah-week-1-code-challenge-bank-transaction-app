@@ -39,11 +39,10 @@ Steps
 3.Install Dependencies:  
   npm install
 
-4. Start the JSON Server:
-  json-server --watch db.json --port 3000
-
-5.Run the React App:
-  npm start
+4. Running the db.json and react app concurrently.
+ - On the terminal run this command :
+     npm run dev
+-on the package.json the script "dev" allows the app and local api too run at the same time with the above command.
 
 The app should now be running at `http://localhost:3000`  
 
@@ -55,11 +54,11 @@ Once the app is running, you can:
  - View all transactions in a tabular format.
 
 ## Components
- .**App**: The main component that holds the state and renders other components.
- .**Header**: Displays the header of the application.
- .**SearchBar**: A component for the search input field.
- .**TransactionForm**: A form for adding new transactions.
- .**TransactionTable**: Displays a list of transactions in a table format which can be deleted.
+ **App**: The main component that holds the state and renders other components.
+ **Header**: Displays the header of the application.
+ **SearchBar**: A component for the search input field.
+ **TransactionForm**: A form for adding new transactions.
+ **TransactionTable**: Displays a list of transactions in a table format which can be deleted.
 
  ## Contributing 
 If you'd like to contribute to this project, please fork the repository and use a feature branch. Pull requests are warmly welcome.
